@@ -1,104 +1,84 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title> 
-            Projeto exemplo
-        </title>
-        <meta name="viewport" content="width=device-width, initial-scala=1.0">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/lista.css">
-    </head>
-    <body>
-        <header class="head-css">
-            <img  class="img" src="img/logo.png">
-        </header>
-
-        <div class="menu"> 
-            <a href="index.html"> Listagem</a>
-    
-            <a href="form.html"> Cadastrar</a>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/index.css" />
+    <script
+      src="https://kit.fontawesome.com/3bfd3ce9e5.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Jogo da Velha</title>
+  </head>
+  <body>
+    <main>
+      <div class="grid" data-id="grid">
+        <!-- Indicador de turno -->
+        <div class="turn" data-id="turn">
+          <i class="fa-solid fa-x turquoise"></i>
+          <p class="turquoise">Jogador 1, é a sua vez!</p>
         </div>
-        
-        <section>
-            
-            <table class="lista">
-                <tr>
-                    <td style="width: 40%;">
-                        Nome
-                    </td>
-                    
-                    <td>
-                        Telefone    
-                    </td>
-                
-                    <td style="width: 25%;">
-                        Experiência prévia    
-                    </td>
-                
-                    <td style="width: 10%;">
-                        Ações
-                    </td>
-                    
-                </tr>
-                
-                <tr>
-                    <td>
-                        Moises Santos Azevedo
-                    </td>
-                    
-                    <td>
-                        +55 (11) 9999-9999    
-                    </td>
-                
-                    <td>
-                        Sim    
-                    </td>
-                
-                    <td>
-                        <button> Alterar </button> 
-                    </td>
-                    
-                </tr>
-                
-                <tr>
-                    <td>
-                        João Bezerra da Silva
-                    </td>
-                    
-                    <td>
-                        +55 (11) 9995-9999    
-                    </td>
-                
-                    <td>
-                        Não    
-                    </td>
-                
-                    <td>
-                        <button> Alterar </button> 
-                    </td>
-                    
-                </tr>
-                
-                <tr>
-                    <td>
-                        Joana Bezerra da Silva
-                    </td>
-                    
-                    <td>
-                        +55 (11) 9997-9999    
-                    </td>
-                
-                    <td>
-                        Sim  
-                    </td>
-                
-                    <td>
-                        <button> Alterar </button> 
-                    </td>
-                    
-                </tr>
-            </table>
-        </section>
 
-    </body>
+        <!-- Menu suspenso -->
+        <div class="menu" data-id="menu">
+          <button class="menu-btn" data-id="menu-btn">
+            Ações
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+
+          <div class="items border hidden" data-id="menu-items">
+            <button data-id="reset-btn">Reiniciar</button>
+            <button data-id="new-round-btn">Nova Rodada</button>
+          </div>
+        </div>
+
+        <!-- Tabuleiro do jogo -->
+        <div id="1" class="square shadow" data-id="square"></div>
+        <div id="2" class="square shadow" data-id="square"></div>
+        <div id="3" class="square shadow" data-id="square"></div>
+        <div id="4" class="square shadow" data-id="square"></div>
+        <div id="5" class="square shadow" data-id="square"></div>
+        <div id="6" class="square shadow" data-id="square"></div>
+        <div id="7" class="square shadow" data-id="square"></div>
+        <div id="8" class="square shadow" data-id="square"></div>
+        <div id="9" class="square shadow" data-id="square"></div>
+
+        <!-- Placar -->
+        <div class="score shadow" style="background-color: var(--turquoise)">
+          <p>Jogador 1</p>
+          <span data-id="p1-wins">0 Vitórias</span>
+        </div>
+        <div class="score shadow" style="background-color: var(--light-gray)">
+          <p>Empates</p>
+          <span data-id="ties">0</span>
+        </div>
+        <div class="score shadow" style="background-color: var(--yellow)">
+          <p>Jogador 2</p>
+          <span data-id="p2-wins">0 Vitórias</span>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>
+        Projeto criado por
+        <a
+          href="https://www.linkedin.com/in/moises-azevedo-dev/"
+          target="_blank"
+          >@Moises Azevedo</a
+        >
+      </p>
+    </footer>
+
+    <!-- Modal que abre quando o jogo termina -->
+    <div class="modal hidden" data-id="modal">
+      <div class="modal-contents">
+        <p data-id="modal-text">Jogador 1 venceu!</p>
+        <button data-id="modal-btn">Jogar novamente</button>
+      </div>
+    </div>
+
+    <script src="js/app.js" type="module"></script>
+  </body>
 </html>
