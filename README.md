@@ -1,6 +1,6 @@
 Projeto que fiz utilizando meus conhecimentos de html5, css3 e javascript
 
-##Como usar?
+# Como usar?
 
 1. No terminal, insira o comando git clone "https://github.com/MoisesAzevedo/jogo-da-velha.git"
 2. Abra o projeto utilizando o VS Code como editor de texto
