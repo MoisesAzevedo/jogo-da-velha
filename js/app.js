@@ -45,7 +45,8 @@ function init() {
     view.render(store.game, store.stats);
   });
 
-  // Quando o documento HTML é carregado pela primeira vez, renderiza a view com base no estado atual.
+  // Quando o documento HTML é carregado pela primeira vez, renderiza a view com base
+  // no estado atual.
   view.render(store.game, store.stats);
 
   view.bindGameResetEvent((event) => {
